@@ -1,0 +1,51 @@
+basic.showLeds(`
+    . # # # .
+    # . # . #
+    # . # . #
+    . # # # .
+    . # # # .
+    `)
+basic.forever(() => {
+    input.onGesture(Gesture.TiltLeft, () => {
+        serial.writeLine("left")
+        control.inBackground(() => {
+            basic.showString("l")
+        })
+    })
+    input.onGesture(Gesture.TiltRight, () => {
+        serial.writeLine("right")
+        control.inBackground(() => {
+            basic.showString("r")
+        })
+    })
+    input.onGesture(Gesture.LogoUp, () => {
+        serial.writeLine("up")
+        control.inBackground(() => {
+            basic.showString("u")
+        })
+    })
+    input.onGesture(Gesture.LogoDown, () => {
+        serial.writeLine("down")
+        control.inBackground(() => {
+            basic.showString("d")
+        })
+    })
+    input.onGesture(Gesture.Shake, () => {
+        serial.writeLine("shake")
+        control.inBackground(() => {
+            basic.showString("s")
+        })
+    })
+    input.onButtonPressed(Button.A, () => {
+        serial.writeLine("a")
+        control.inBackground(() => {
+            basic.showString("a")
+        })
+    })
+    input.onButtonPressed(Button.B, () => {
+        serial.writeLine("b")
+        control.inBackground(() => {
+            basic.showString("b")
+        })
+    })
+})
